@@ -35,6 +35,6 @@ Start Typing comes bundled with [Nicolas Gallagher](http://nicolasgallagher.com)
 
 ## Useful links
 
-* The Typed theming docs: https://www.typed.com/
+* The Typed theming docs: https://www.typed.com/docs/themes/latest
 * Our official starter theme (doesn’t require Node or anything): https://github.com/realmacsoftware/typed-themes/tree/master/starter
 * Our Mac app for previewing themes locally: https://dl.devmate.com/com.realmacsoftware.typedthemes/ThemePreview.zip
