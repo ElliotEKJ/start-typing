@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ meta.title }} - {{ site.title }}</title>
+    <meta name="description" content="{{ meta.description }}">
+    <link rel="stylesheet" href="{% asset 's/styles.css' %}">
+    <link rel="canonical" href="{{ site.url }}">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.feed_url }}">
+    <link rel="icon" href="{% asset 'i/icon.png' %}">
+    <link rel="mask-icon" href="{% asset 'i/mask-icon.svg' %}" color="#5AADED">
+    <link rel="apple-touch-icon-precomposed" href="{% asset 'i/apple-touch-icon-precomposed.png' %}">
+    {% block postmeta %}{% endblock postmeta %}
+    {{ site.code_head }}
+
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body {% block bodyclass %}{% endblock bodyclass %}>
+    {% include 'partials/header.html' %}
+
+    <main class="main" role="main">
+      {% block content %}
+      {% endblock content %}
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+    <script type="text/javascript" src="{% asset 'j/scripts.js' %}"></script>
+    {% block pagejs %}{% endblock pagejs %}
+    {{ site.code_body }}
+  </body>
+</html>

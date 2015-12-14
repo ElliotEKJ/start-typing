@@ -1,0 +1,61 @@
+{% extends 'partials/base.html' %}
+{% block bodyclass %}{{ super() }}class="post"{% endblock bodyclass %}
+
+{% block postmeta %}
+  {{ super() }}
+
+  {% if post.images %}
+  <meta name="twitter:image" content="{{ post.images[0].url }}">
+  <meta property="og:image" content="{{ post.images[0].url }}" />
+  {% endif %}
+
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="{{ meta.title }}">
+  <meta property="twitter:description" content="{{ meta.description }}">
+  <meta property="twitter:domain" content="{{ site.url }}">
+
+  <meta property="og:title" content="{{ meta.title }}">
+  <meta property="og:description" content="{{ meta.description }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:url" content="{{ post.url|absolute_url }}" />
+  <meta property="og:type" content="article">
+
+  <meta name="author" content="{{ post.authors|authors }}">
+{% endblock postmeta %}
+
+{% block content %}
+  {{ super() }}
+
+  <article class="article">
+    <h1 class="article-title">{{ post.title }}</h1>
+
+    <span class="article-meta">
+      <a href="{{ post.url }}" rel="bookmark"><time datetime="{{ post.published_at|date(isoformat=True) }}">{{ post.published_at|date('%B %-d, %Y') }}</time></a>
+      {{ post.tags|tags(separator=', ', last_separator=' and ', prefix='Posted in ') }}
+    </span>
+
+    <div class="article-content">
+      {{ post.content }}
+    </div>
+
+    {{ site.code_post }}
+
+    <div class="authors">
+      {% for author in post.authors %}
+      <div class="author">
+        <img src="{{ author.avatar }}" alt="{{ author.name }}">
+        {{ author.name }}
+        {{ author.bio }}
+      </div>
+      {% endfor %}
+    </div>
+  </article>
+{% endblock content %}
+
+{% block pagejs %}
+  {{ super() }}
+  <!--
+     Anything you put in here will only be loaded
+     for this page.
+  -->
+{% endblock pagejs %}

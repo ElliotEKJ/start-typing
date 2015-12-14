@@ -1,0 +1,22 @@
+{% extends 'partials/base.html' %}
+{% block bodyclass %}{{ super() }}class="error"{% endblock bodyclass %}
+
+{% block content %}
+  {{ super() }}
+
+  <article class="page-article">
+    <h1 class="page-title">{{ error.title }} ({{ error.status_code }})</h1>
+
+    <div class="page-content">
+      {{ error.message }}
+    </div>
+  </article>
+{% endblock content %}
+
+{% block pagejs %}
+  {{ super() }}
+  <!--
+     Anything you put in here will only be loaded
+     for this page.
+  -->
+{% endblock pagejs %}

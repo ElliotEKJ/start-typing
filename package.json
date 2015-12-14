@@ -1,0 +1,22 @@
+{
+  "name": "start-typing",
+  "version": "1.0.0",
+  "description": "A Gulp powered boilerplate for Typed themes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elliotekj/start-typing.git"
+  },
+  "author": "Elliot Jackson",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-sass": "^2.1.1",
+    "gulp-template": "^3.1.0",
+    "gulp-uglify": "^1.5.1"
+  }
+}
